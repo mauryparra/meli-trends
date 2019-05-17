@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meli Trends</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
+    <script defer type="text/javascript" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer type="text/javascript" src="trends.js"></script>
+</head>
+<body onload="getTrends()">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            Meli Trends
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+           data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                Inicio
+            </a>
+
+            <a class="navbar-item" href="https://github.com/mauryparra/meli-trends">
+                Github
+            </a>
+
+        </div>
+    </div>
+</nav>
+<div class="container" id="trends" style="margin-top: 30px;">
+
+</div>
+</body>
+</html>

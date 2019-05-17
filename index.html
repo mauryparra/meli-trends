@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script defer src="./app.js"></script>
+    <script defer src="trends.js"></script>
 </head>
 <body>
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -26,11 +26,11 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item">
+            <a class="navbar-item" href="/">
                 Inicio
             </a>
 
-            <a class="navbar-item">
+            <a class="navbar-item" href="https://github.com/mauryparra/meli-trends">
                 Github
             </a>
 
@@ -39,7 +39,7 @@
 </nav>
 <section>
     <div class="container">
-        <form action="index.html" method="get">
+        <form action="trends" method="get">
             <div class="columns">
                 <div class="column">
                     <!-- Sitios -->
@@ -48,7 +48,7 @@
                         <p class="control has-icons-left">
                             <span class="select">
                                 <select name="site_id" id="sitios" required>
-                                    <option selected disabled>Elegir opción</option>
+                                    <option selected value disabled>Elegir opción</option>
                                     <option value="MLA">Argentina</option>
                                 </select>
                             </span>
@@ -62,11 +62,11 @@
                 <div class="column">
                     <!-- Categorias -->
                     <div class="field">
-                        <label for="categorias">Categorias</label>
+                        <label for="categorias">Categorias (Opcional)</label>
                         <p class="control has-icons-left">
                             <span class="select">
-                                <select name="category_id" id="categorias" required>
-                                    <option selected disabled>Elegir opción</option>
+                                <select name="category_id" id="categorias">
+                                    <option selected value disabled>Elegir opción</option>
                                     <option value="MLA5725">Accesorios para Vehículos</option>
                                 </select>
                             </span>
@@ -82,7 +82,7 @@
                     <div class="field">
                         <label for="filas">Filas</label>
                         <div class="control">
-                            <input name="fil" id="filas" class="input" type="number" placeholder="Filas" min="3" max="5" required>
+                            <input name="fil" id="filas" class="input" type="number" placeholder="Filas" min="3" max="5" value="3" required>
                         </div>
 
 
@@ -91,7 +91,7 @@
                         <label for="columnas">Columnas</label>
                         <div class="control">
 
-                            <input name="col" id="columnas" class="input" type="number" placeholder="Columnas" min="3" max="5" required>
+                            <input name="col" id="columnas" class="input" type="number" placeholder="Columnas" min="3" max="5" value="3" required>
                         </div>
                         <p class="help">Ingrese el número de filas y columnas para visualizar.</p>
                     </div>
@@ -119,8 +119,6 @@
                 <button class="button is-primary">Mostrar Trends</button>
             </div>
         </form>
-
-
     </div>
 </section>
 </body>
