@@ -92,6 +92,10 @@ function obtenerHTMLTrends(trends, fil, col, visualizacion) {
     var trendIndex = 0;
     var colores = ['is-primary', 'is-success', 'is-info', 'is-warning', 'is-danger', 'is-dark', 'is-light'];
 
+    if (trends == null) {
+        return '<div class="notification is-warning"><p class="title">Sin Resultados</p></div>'
+    }
+
     for (let i = 0; i < fil; i++) {
         html += '<div class="tile is-ancestor">';
 

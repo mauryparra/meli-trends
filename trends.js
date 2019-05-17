@@ -16,6 +16,68 @@ function getTrends() {
 }
 
 
+function getSites() {
+
+    // Create a request variable and assign a new XMLHttpRequest object to it.
+    var request = new XMLHttpRequest();
+
+    // Open a new connection, using the GET request on the URL endpoint
+    request.open('GET', 'https://api.mercadolibre.com/sites', true);
+
+    request.onload = function () {
+        // Begin accessing JSON data here
+
+        var sites = JSON.parse(request.responseText);
+
+        var select = document.getElementById('sitios');
+
+        sites.forEach(function (site) {
+            var opt = document.createElement('option');
+            opt.value = site.id;
+            opt.text = site.name;
+
+            select.appendChild(opt);
+        })
+
+    };
+
+    // Send request
+    request.send();
+}
+
+function getCategories(el) {
+
+    // Create a request variable and assign a new XMLHttpRequest object to it.
+    var request = new XMLHttpRequest();
+
+    // Open a new connection, using the GET request on the URL endpoint
+    request.open('GET', 'https://api.mercadolibre.com/sites/' + el.selectedOptions[0].value + '/categories', true);
+
+    request.onload = function () {
+        // Begin accessing JSON data here
+
+        var categories = JSON.parse(request.responseText);
+
+        var select = document.getElementById('categorias');
+        
+        for (i = select.options.length - 1; i > 0; i--) {
+            select.remove(i);
+        }
+
+        categories.forEach(function (category) {
+            var opt = document.createElement('option');
+            opt.value = category.id;
+            opt.text = category.name;
+
+            select.appendChild(opt);
+        })
+
+    };
+
+    // Send request
+    request.send();
+}
+
 
 
 // Bulma functions
